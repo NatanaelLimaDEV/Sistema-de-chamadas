@@ -1,23 +1,22 @@
-import { initializeApp } from 'firebase/app'
-import { getAuth } from 'firebase/auth'
-import { getFirestore } from 'firebase/firestore'
-import { getStorage } from 'firebase/storage'
-
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAdEMZMB-Onddc-BU0BXc-j_Iozsa4cuh8",
-    authDomain: "tickets-f3a7c.firebaseapp.com",
-    projectId: "tickets-f3a7c",
-    storageBucket: "tickets-f3a7c.firebasestorage.app",
-    messagingSenderId: "18055629190",
-    appId: "1:18055629190:web:bb74253f5844d6fd63c407",
-    measurementId: "G-TPW5422KMK"
-  };
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+};
 
-  const firebaseApp = initializeApp(firebaseConfig)
+const firebaseApp = initializeApp(firebaseConfig);
 
-  const auth = getAuth(firebaseApp)
-  const db = getFirestore(firebaseApp)
-  const storage = getStorage(firebaseApp)
+const auth = getAuth(firebaseApp);
+const db = getFirestore(firebaseApp);
+const storage = getStorage(firebaseApp);
 
-  export { auth, db, storage }
+export { auth, db, storage };
